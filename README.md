@@ -249,26 +249,3 @@ If step 3 fails → must undo steps 1 & 2. **No 2PC, no XA — use Saga with com
 
 ---
 
-## 🎤 One-Liner for Interview
-
----
-
-## 🎤 One-Liner for Interview
-
-> *"I built a production-grade refund system that handles mixed payment methods, platform fees, and GST reversal — wrapped in an idempotent service using Redisson distributed locks that survives Razorpay's webhook retry storms. The calculator uses immutable BigDecimal money, strategy-pattern policies for merchant customization, and proportional split with rounding error absorption. Tests cover duplicate webhook delivery, concurrent requests, and failure recovery."*
-
----
-
-## 🔗 Next Steps (If Asked)
-
-1. **Add metrics** (Micrometer): refund latency, duplicate rate, failure rate
-2. **Saga pattern** for multi-step refunds (gateway → ledger → wallet → notification) ✅ Done
-3. **Outbox pattern** for reliable event publishing ✅ Done
-4. **Reconciliation job** comparing our ledger vs Razorpay settlement reports ✅ Done
-5. **Kafka event sourcing** for audit trail
-6. **Circuit breaker** (Resilience4j) for gateway calls
-7. **Distributed tracing** (OpenTelemetry) across saga steps
-
----
-
-**Built for Razorpay SDE interview preparation. Good luck! 🚀**
